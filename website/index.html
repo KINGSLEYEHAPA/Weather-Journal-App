@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My weather Journal App</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <h1 id="header">Weather Journal</h1>
+      <span class="left-cloud"> <i class="fas fa-cloud-sun-rain"></i></span>
+      <span class="right-cloud"> <i class="fas fa-cloud-sun-rain"></i></span>
+    </header>
+    <div class="dashboard">
+      <div class="condition">
+        <h2>Weather Condition</h2>
+        <img
+          src="http://openweathermap.org/img/wn/10d@2x.png"
+          alt="Weather Condition"
+        />
+        <p class="condition-info">Mist</p>
+      </div>
+      <div class="city">
+        <h2>Location</h2>
+        <p>Lagos</p>
+      </div>
+      <div class="temp">
+        <h2>Weather Stats</h2>
+        <p>Date: <span class="date">Tue Dec 5 2021</span></p>
+        <p>Temp: <span class="temp-data">37°C</span></p>
+        <p class="user-message">
+          I am feeling very hot this weather is smoking
+        </p>
+      </div>
+    </div>
+    <div class="user-input">
+      <input
+        id="cityInput"
+        type="text"
+        name="cityName"
+        placeholder="Enter Your Zip Code"
+      />
+      <small class="error"></small>
+      <input
+        type="text"
+        name="emotion"
+        id="user-feeling"
+        placeholder="How are you feeling today?"
+        maxlength="45"
+      />
+      <div class="buttons">
+        <button type="submit" id="send">Generate</button>
+        <button type="submit" id="refresh">Refresh</button>
+      </div>
+    </div>
+    <footer id="footer">
+      <p>Weather information flow from Openweathermap</p>
+      <span> &copy;2021 page created by Kingsley Ehapa</span>
+    </footer>
+
+    <script src="app.js"></script>
+    <script
+      src="https://kit.fontawesome.com/9a999b05e4.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

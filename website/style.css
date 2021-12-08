@@ -1,0 +1,159 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 100vh;
+  width: 100vw;
+  background-image: url("img/background.jpg");
+  background-size: cover;
+}
+
+#header {
+  font-size: 3.5rem;
+  margin: 4rem 0;
+  color: white;
+  width: 100%;
+}
+
+.dashboard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(255, 255, 255, 0.25);
+  height: 20rem;
+  width: 80%;
+  box-shadow: 10px 15px 5px rgba(0, 0, 0, 0.75);
+  border-radius: 1rem;
+  display: none;
+}
+.dashboard > div {
+  margin: 0 2rem;
+  background: rgba(0, 0, 0, 0.25);
+  height: 80%;
+  width: 100rem;
+  text-align: center;
+  box-shadow: 4px 7px 5px rgba(0, 0, 0, 25.75);
+  border-top-right-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+}
+.city h2 {
+  color: white;
+  margin-top: 1rem;
+  font-size: 1.5rem;
+}
+.temp h2 {
+  color: white;
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+.city p {
+  color: skyblue;
+  font-size: 2.5rem;
+  font-weight: 900;
+  margin-top: 4rem;
+}
+.temp span {
+  color: red;
+  font-size: 1rem;
+  font-weight: 900;
+}
+.temp p {
+  color: white;
+  text-align: justify;
+  margin: 0 2rem;
+  padding: 0.5rem 0;
+}
+.temp p:last-child {
+  font-weight: 900;
+  color: skyblue;
+}
+.right-cloud {
+  color: white;
+  font-size: 6rem;
+  position: absolute;
+  top: 2rem;
+  right: 4rem;
+}
+.left-cloud {
+  color: white;
+  font-size: 6rem;
+  position: absolute;
+  top: 2rem;
+  left: 4rem;
+}
+.condition h2 {
+  color: white;
+  font-size: 1.5rem;
+  margin-top: 1rem;
+}
+.condition img {
+  width: 8rem;
+  margin-top: 0.5rem;
+}
+.condition p {
+  font-size: 1.5rem;
+  color: skyblue;
+  font-weight: 700;
+}
+
+.user-input {
+  margin: 2rem 0 6rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+#cityInput,
+#user-feeling {
+  width: 28rem;
+  background-color: rgb(135, 206, 235, 0.8);
+  height: 2.5rem;
+  outline: none;
+  border: none;
+  color: white;
+  margin: 1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 0 1rem;
+  border-radius: 1rem;
+}
+.error {
+  position: relative;
+  left: 2rem;
+  color: red;
+}
+
+::placeholder {
+  color: blue;
+  opacity: 0.25;
+}
+.buttons {
+  margin-top: 1rem;
+}
+
+.buttons > button {
+  margin: 0 4rem;
+  padding: 0.25rem 1rem;
+  color: white;
+  font-size: 1rem;
+  background-color: rgb(135, 206, 235, 0.8);
+  border-radius: 0.5rem;
+  outline: none;
+}
+
+footer p,
+footer span {
+  color: rgb(128, 118, 118);
+  font-size: 1rem;
+  text-align: center;
+}
