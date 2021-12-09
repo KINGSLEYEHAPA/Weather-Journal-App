@@ -1,5 +1,6 @@
 goBtn = document.querySelector("#send");
 const dashboard = document.querySelector(".dashboard");
+let backgroundCover = document.querySelector("body");
 
 goBtn.addEventListener("click", retrieveData);
 
@@ -11,6 +12,7 @@ async function retrieveData(e) {
 
   const newWeatherData = await getData(url)
     .then(function (newWeatherData) {
+      console.log(newWeatherData);
       if (newWeatherData.cod === "404") {
         const error = document.querySelector(".error");
         error.textContent = newWeatherData.message;
@@ -18,6 +20,39 @@ async function retrieveData(e) {
           error.textContent = "";
         }, 3000);
       }
+
+      const imageFile = [
+        "url('img/broken-clouds.jfif')",
+        "url('img/clear-sky.jpg')",
+        "url('img/haze.jfif')",
+        "url('img/heavy-rain.jpg')",
+        "url('img/light-rain.jpg')",
+        "url('img/light-snow.jfif')",
+        "url('img/mist.jfif')",
+        "url('img/overcast-clouds.jpg')",
+        "url('img/snow.jpg')",
+      ];
+      console.log(backgroundCover);
+      if (newWeatherData.weather[0].description === "broken clouds") {
+        backgroundCover.style.backgroundImage = imageFile[0];
+      } else if (newWeatherData.weather[0].description === "clear sky") {
+        backgroundCover.style.backgroundImage = imageFile[1];
+      } else if (newWeatherData.weather[0].description === "haze") {
+        backgroundCover.style.backgroundImage = imageFile[2];
+      } else if (newWeatherData.weather[0].description === "heavy rain") {
+        backgroundCover.style.backgroundImage = imageFile[3];
+      } else if (newWeatherData.weather[0].description === "light rain") {
+        backgroundCover.style.backgroundImage = imageFile[4];
+      } else if (newWeatherData.weather[0].description === "light snow") {
+        backgroundCover.style.backgroundImage = imageFile[5];
+      } else if (newWeatherData.weather[0].description === "mist") {
+        backgroundCover.style.backgroundImage = imageFile[6];
+      } else if (newWeatherData.weather[0].description === "overcast clouds") {
+        backgroundCover.style.backgroundImage = imageFile[7];
+      } else if (newWeatherData.weather[0].description === "snow") {
+        backgroundCover.style.backgroundImage = imageFile[8];
+      }
+
       const weatherConditionImage = document.querySelector(".condition img");
       const weatherCondition = document.querySelector(".condition-info");
       weatherCondition.textContent = newWeatherData.weather[0].description;
@@ -87,7 +122,6 @@ const updateUI = async () => {
 
     userMessage.textContent = serverData.userResponse;
 
-    const dashboard = document.querySelector(".dashboard");
     dashboard.style.display = "flex";
     document.querySelector("#cityInput").value = "";
     document.querySelector("#user-feeling").value = "";
@@ -96,22 +130,10 @@ const updateUI = async () => {
   }
 };
 
-//   const backgroundImage = document.querySelector("body").style.backgroundImage;
-//   const imageFile = [
-//     "url('img/broken-clouds.jfif')",
-//     "url('img/clear-sky.jpg')",
-//     "url('img/haze.jfif')",
-//     "url('img/heavy-rain.jpg')",
-//     "url('img/light-rain.jpg')",
-//     "url('img/light-snow.jfif')",
-//     "url('img/mist.jfif')",
-//     "url('img/overcast-clouds.jpg')",
-//     "url('img/snow.jpg')",
-//   ];
-
 const refresh = document.querySelector("#refresh");
 refresh.addEventListener("click", () => {
   dashboard.style.display = "none";
+  backgroundCover.style.backgroundImage = 'url("img/background.jpg")';
 });
 
 const postData = async (url = "", data = {}) => {

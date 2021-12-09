@@ -24,7 +24,6 @@ body {
 }
 
 .dashboard {
-  display: flex;
   align-items: center;
   justify-content: center;
   background-color: rgb(255, 255, 255, 0.25);
@@ -62,7 +61,7 @@ body {
   margin-top: 4rem;
 }
 .temp span {
-  color: red;
+  color: white;
   font-size: 1rem;
   font-weight: 900;
 }
@@ -75,6 +74,7 @@ body {
 .temp p:last-child {
   font-weight: 900;
   color: skyblue;
+  font-size: 1.2rem;
 }
 .right-cloud {
   color: white;
