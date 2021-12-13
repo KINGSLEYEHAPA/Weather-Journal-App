@@ -31,7 +31,7 @@ body {
   width: 80%;
   box-shadow: 10px 15px 5px rgba(0, 0, 0, 0.75);
   border-radius: 1rem;
-  display: none;
+  display: flex;
 }
 .dashboard > div {
   margin: 0 2rem;
@@ -156,4 +156,92 @@ footer span {
   color: rgb(128, 118, 118);
   font-size: 1rem;
   text-align: center;
+  width: 60%;
+}
+
+/* Media Queries */
+
+@media screen and (min-width: 950px) and (max-width: 1325px) {
+  .dashboard {
+    width: 95%;
+  }
+  .dashboard > div {
+    width: 18rem;
+    margin: 1rem;
+  }
+  .temp p:last-child {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 950px) {
+  #header {
+    font-size: 2.5rem;
+  }
+
+  .right-cloud {
+    color: white;
+    font-size: 4rem;
+    position: absolute;
+    top: 2rem;
+    right: 2.5rem;
+  }
+  .left-cloud {
+    color: white;
+    font-size: 4rem;
+    position: absolute;
+    top: 2rem;
+    left: 2.5rem;
+  }
+  .dashboard {
+    width: 90%;
+    height: 60%;
+    flex-direction: column;
+  }
+  .dashboard > div {
+    width: 80%;
+    margin: 1rem;
+  }
+}
+
+@media screen and (min-width: 360px) and (max-width: 599px) {
+  #header {
+    font-size: 1.5rem;
+  }
+
+  .right-cloud {
+    color: white;
+    font-size: 2rem;
+    position: absolute;
+    top: 2rem;
+    right: 2.5rem;
+  }
+  .left-cloud {
+    color: white;
+    font-size: 2rem;
+    position: absolute;
+    top: 2rem;
+    left: 2.5rem;
+  }
+  .dashboard {
+    width: 90%;
+    height: 60%;
+    flex-direction: column;
+  }
+  .dashboard > div {
+    width: 80%;
+    margin: 1rem;
+  }
+
+  #cityInput,
+  #user-feeling {
+    width: 20rem;
+  }
+  .buttons > button {
+    margin: 2rem;
+  }
+  footer p,
+  footer span {
+    width: 80%;
+  }
 }
